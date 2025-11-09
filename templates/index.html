@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Home - Deen Hub{% endblock %}
+{% block content %}
+<div class="home-hero">
+  <h1>Deen Tools Hub</h1>
+  <p>เครื่องมือและแบบฝึกหัดสำหรับทุกคน(ผมคนเดียว)</p>
+  <div class="home-actions">
+    <a class="cta btn" href="{{ url_for('register') }}">สมัครสมาชิก</a>
+    <a class="cta btn" href="{{ url_for('login') }}">เข้าสู่ระบบ</a>
+  </div>
+</div>
+{% endblock %}

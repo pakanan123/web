@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="container">
+  <h2>Dashboard</h2>
+  <p>สวัสดี {{ username }} — เลือกเมนูด้านล่างเพื่อเริ่มใช้งาน</p>
+
+  <div class="card-row">
+    <div class="card">
+      <h3>Interactive Quiz</h3>
+      <p>ฝึกการแปลงฐาน คณิตศาสตร์ และ logic</p>
+      <a class="btn" href="{{ url_for('quiz') }}">เริ่ม Quiz</a>
+    </div>
+
+    <div class="card">
+      <h3>Learning Tool</h3>
+      <p>ตัวแปลงเลขฐานเร็วๆ และเครื่องมืออื่นๆ</p>
+      <a class="btn" href="{{ url_for('tool') }}">เข้า Tool</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

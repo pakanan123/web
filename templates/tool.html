@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Tool{% endblock %}
+{% block content %}
+<div class="container">
+  <h2>Learning Tool — ตัวแปลงเลขฐาน</h2>
+  <div class="form-card">
+    <label>ใส่เลขฐาน 10 (Decimal)</label>
+    <input id="dec-input" type="number" placeholder="เช่น 255">
+    <div class="row">
+      <button id="convert-btn" class="btn">แปลง</button>
+      <button id="clear-btn" class="btn ghost">ล้างค่า</button>
+    </div>
+    <p id="convert-result" class="result"></p>
+  </div>
+</div>
+{% endblock %}

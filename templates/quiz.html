@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Quiz{% endblock %}
+{% block content %}
+<div class="container">
+  <h2>Interactive Quiz</h2>
+  <div class="card">
+    <h3 id="q-text">กดปุ่มเพื่อโหลดคำถาม</h3>
+    <div id="choices" class="choices"></div>
+    <div class="row">
+      <button id="load-btn" class="btn">โหลดคำถามสุ่ม</button>
+      <button id="next-btn" class="btn ghost">คำถามถัดไป</button>
+    </div>
+    <p id="feedback"></p>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+/* inline small script to attach after script.js loads */
+document.addEventListener('DOMContentLoaded', () => {
+  // script.js handles the functionality
+});
+</script>
+{% endblock %}

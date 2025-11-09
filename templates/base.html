@@ -1,0 +1,41 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% block title %}My tool Web{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="{{ url_for('dashboard') }}" class="brand">Deen Tools</a>
+      <nav>
+        {% if session.get('user_id') %}
+          <span class="nav-user">สวัสดี, {{ session.get('username') }}</span>
+          <a href="{{ url_for('dashboard') }}">Dashboard</a>
+          <a href="{{ url_for('tool') }}">Tool</a>
+          <a href="{{ url_for('quiz') }}">Quiz</a>
+          <a href="{{ url_for('scores') }}">Scores</a>
+          <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+          <a href="{{ url_for('login') }}">Login</a>
+          <a href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Deen Web / Tool</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

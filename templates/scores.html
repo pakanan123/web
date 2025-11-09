@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Scores{% endblock %}
+{% block content %}
+<div class="container">
+  <h2>ประวัติผลการทำแบบทดสอบ</h2>
+  {% if rows %}
+    <table class="scores-table">
+      <thead><tr><th>วันที่</th><th>คะแนน</th></tr></thead>
+      <tbody>
+      {% for r in rows %}
+        <tr>
+          <td>{{ r['created_at'] }}</td>
+          <td>{{ r['score'] }} / {{ r['total'] }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>ยังไม่มีผลการทดสอบ</p>
+  {% endif %}
+</div>
+{% endblock %}
